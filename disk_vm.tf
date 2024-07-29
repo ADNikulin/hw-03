@@ -21,6 +21,7 @@ variable "vm_settings_storage" {
     hdd_type      = string,
     preemptible   = bool
     name          = string
+    is_using_nat  = bool
   })
   default = {
     core_count    = 2,
@@ -30,7 +31,8 @@ variable "vm_settings_storage" {
     hdd_type      = "network-hdd",
     platform_id   = "standard-v3",
     preemptible   = true,
-    name          = "storage-vm"
+    name          = "storage-vm",
+    is_using_nat  = true
   }
 }
 
@@ -73,7 +75,7 @@ resource "yandex_compute_instance" "storage" {
   network_interface {
     subnet_id          = yandex_vpc_subnet.develop.id
     security_group_ids = toset([yandex_vpc_security_group.example.id])
-    nat = true
+    nat                = var.vm_settings_storage.is_using_nat
   }
 
   dynamic "secondary_disk" {

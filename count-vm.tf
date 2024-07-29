@@ -7,7 +7,8 @@ variable "minimal_web_settings" {
     hdd_size      = number,
     hdd_type      = string,
     preemptible   = bool,
-    nat           = bool
+    nat           = bool,
+    is_using_nat  = bool
   })
   default = {
     core_count    = 2,
@@ -17,7 +18,7 @@ variable "minimal_web_settings" {
     hdd_type      = "network-hdd",
     platform_id   = "standard-v3",
     preemptible   = true,
-    nat           = true
+    is_using_nat  = true
   }
 }
 
@@ -49,7 +50,7 @@ resource "yandex_compute_instance" "web" {
   network_interface {
     subnet_id          = yandex_vpc_subnet.develop.id
     security_group_ids = toset([yandex_vpc_security_group.example.id])
-    nat                = var.minimal_web_settings.nat
+    nat                = var.minimal_web_settings.is_using_nat
   }
 
   allow_stopping_for_update = true
