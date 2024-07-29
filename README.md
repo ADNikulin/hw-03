@@ -118,8 +118,12 @@
      [storage]
      storage ansible_host=<внешний ip-адрес> fqdn=<полное доменное имя виртуальной машины>
      ```
-    Пример fqdn: ```web1.ru-central1.internal```(в случае указания имени ВМ); ```fhm8k1oojmm5lie8i22a.auto.internal```(в случае автоматической генерации имени ВМ зона изменяется). нужную вам переменную найдите в документации провайдера или terraform console.
-  4. Выполните код. Приложите скриншот получившегося файла. 
+     Пример fqdn: ```web1.ru-central1.internal```(в случае указания имени ВМ); ```fhm8k1oojmm5lie8i22a.auto.internal```(в случае автоматической генерации имени ВМ зона изменяется). нужную вам переменную найдите в документации провайдера или terraform console.
+  4. Выполните код. Приложите скриншот получившегося файла.
+     > ![image](https://github.com/user-attachments/assets/a85c66fb-0bb6-49fd-a075-5a7b9e1ab067)
+     > ![image](https://github.com/user-attachments/assets/29e26563-dc16-4d5d-98ed-37884af91328)
+     > ![image](https://github.com/user-attachments/assets/e7612cbf-5051-483a-838a-a711a9640bf9)
+     > ![image](https://github.com/user-attachments/assets/e703da0a-afbb-448c-a83a-191e7f5e0c81)
   
   Для общего зачёта создайте в вашем GitHub-репозитории новую ветку terraform-03. Закоммитьте в эту ветку свой финальный код проекта, пришлите ссылку на коммит.   
   **Удалите все созданные ресурсы**.
