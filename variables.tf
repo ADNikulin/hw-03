@@ -30,3 +30,7 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+
+variable "path_to_meta_data_user" {
+  type = string
+}
