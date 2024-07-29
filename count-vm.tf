@@ -7,7 +7,6 @@ variable "minimal_web_settings" {
     hdd_size      = number,
     hdd_type      = string,
     preemptible   = bool,
-    nat           = bool,
     is_using_nat  = bool
   })
   default = {

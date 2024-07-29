@@ -1,5 +1,5 @@
 variable "each_vm" {
-  type = list(object({ vm_name = string, cpu = number, ram = number, disk_volume = number, disk_type = string, core_fraction = number, platform_id = string, preemptible = bool }))
+  type = list(object({ vm_name = string, cpu = number, ram = number, disk_volume = number, disk_type = string, core_fraction = number, platform_id = string, preemptible = bool, is_using_nat = bool }))
   default = [{
     core_fraction = 20
     cpu           = 2
@@ -9,6 +9,7 @@ variable "each_vm" {
     ram           = 4
     vm_name       = "main"
     preemptible   = true
+    is_using_nat  = true
   },
   {
     core_fraction = 20
@@ -19,6 +20,7 @@ variable "each_vm" {
     ram           = 4
     vm_name       = "replica"
     preemptible   = true
+    is_using_nat  = true
   }]
 }
 
@@ -53,7 +55,7 @@ resource "yandex_compute_instance" "db" {
 
   network_interface {
     subnet_id          = yandex_vpc_subnet.develop.id
-    nat                = true
+    nat                = each.value.is_using_nat
     security_group_ids = toset([yandex_vpc_security_group.example.id])
   }
 
