@@ -38,9 +38,9 @@
   2. Заполните файл personal.auto.tfvars.
   3. Инициализируйте проект, выполните код. Он выполнится, даже если доступа к preview нет.
   
-    Приложите скриншот входящих правил «Группы безопасности» в ЛК Yandex Cloud или скриншот отказа в предоставлении доступа к preview-версии.
-    > ![image](https://github.com/user-attachments/assets/e5794ae8-0582-461d-b99f-c7a5af62c3c8)
-  
+     Приложите скриншот входящих правил «Группы безопасности» в ЛК Yandex Cloud или скриншот отказа в предоставлении доступа к preview-версии.
+     > ![image](https://github.com/user-attachments/assets/e5794ae8-0582-461d-b99f-c7a5af62c3c8)
+    
 </details>
 ------
 
@@ -49,16 +49,33 @@
   <summary>Детали</summary>
   
   1. Создайте файл count-vm.tf. Опишите в нём создание двух **одинаковых** ВМ  web-1 и web-2 (не web-0 и web-1) с минимальными параметрами, используя мета-аргумент **count loop**. Назначьте ВМ созданную в первом задании группу безопасности.(как это сделать узнайте в документации провайдера yandex/compute_instance )
-  2. Создайте файл for_each-vm.tf. Опишите в нём создание двух ВМ для баз данных с именами "main" и "replica" **разных** по cpu/ram/disk_volume , используя мета-аргумент **for_each loop**. Используйте для обеих ВМ одну общую переменную типа:
+     > ![image](https://github.com/user-attachments/assets/cf33979f-3ccd-41e9-a42e-0a1dbb62c7d4)
+     > ![image](https://github.com/user-attachments/assets/5509a0a0-81f2-4f03-8e32-f4b5593a0010)
+     > ![image](https://github.com/user-attachments/assets/cf6a1265-175e-47fe-a678-ae2b9b21d27e)
+
+  3. Создайте файл for_each-vm.tf. Опишите в нём создание двух ВМ для баз данных с именами "main" и "replica" **разных** по cpu/ram/disk_volume , используя мета-аргумент **for_each loop**. Используйте для обеих ВМ одну общую переменную типа:
      ```
      variable "each_vm" {
        type = list(object({  vm_name=string, cpu=number, ram=number, disk_volume=number }))
      }
-     ```  
+     ```
      При желании внесите в переменную все возможные параметры.
+     > ![image](https://github.com/user-attachments/assets/312e7f19-d96f-4494-b829-0584763bc410)
+     > ![image](https://github.com/user-attachments/assets/96df3ec5-fbe8-4e0a-bf14-9248afb1920b)
+
   4. ВМ из пункта 2.1 должны создаваться после создания ВМ из пункта 2.2.
+     > ![image](https://github.com/user-attachments/assets/13827f23-0d02-4c90-93fd-95370040ba02)
+
   5. Используйте функцию file в local-переменной для считывания ключа ~/.ssh/id_rsa.pub и его последующего использования в блоке metadata, взятому из ДЗ 2.
+     > Я чуть по другому сдела... \
+     > ![image](https://github.com/user-attachments/assets/cb486ba4-c2db-4c03-836a-f2fee048e5d8) \
+     > ![image](https://github.com/user-attachments/assets/77ad4dbd-342f-4d7f-91e7-fb2fe85ddfb0) \
+     > ![image](https://github.com/user-attachments/assets/095afa6e-86f8-4502-88e9-989bfbb9c05c) \
+     > ![image](https://github.com/user-attachments/assets/65f00f0c-a242-4712-9ab4-c4732cac88e9) \
+
   6. Инициализируйте проект, выполните код.
+     > ![image](https://github.com/user-attachments/assets/9709db65-68c9-4c05-8bf2-1da8f418925c) \
+     > ![image](https://github.com/user-attachments/assets/b84657fb-123b-4989-ac30-cc0102327f7a)
   
 </details>
 ------
@@ -68,7 +85,13 @@
   <summary>Детали</summary>
   
   1. Создайте 3 одинаковых виртуальных диска размером 1 Гб с помощью ресурса yandex_compute_disk и мета-аргумента count в файле **disk_vm.tf** .
+     > ![image](https://github.com/user-attachments/assets/9b5a22b7-bd39-40c0-915e-1b291b48452c) \
+     > ![image](https://github.com/user-attachments/assets/18b3108f-8a38-48bb-9e5a-289c6e47d200)
   2. Создайте в том же файле **одиночную**(использовать count или for_each запрещено из-за задания №4) ВМ c именем "storage"  . Используйте блок **dynamic secondary_disk{..}** и мета-аргумент for_each для подключения созданных вами дополнительных дисков.
+     > ![image](https://github.com/user-attachments/assets/3b8efcd7-c2a8-4d91-a235-fe89ce8af8d7) \
+     > ![image](https://github.com/user-attachments/assets/b9473c97-ab03-4fc4-94ee-7cf9172aef2b) \
+     > ![image](https://github.com/user-attachments/assets/463c42d4-a9f2-4e8e-9684-5e6866474f69) \
+     > ![image](https://github.com/user-attachments/assets/dc12142f-1b73-4bfe-9b51-a76040018aeb)
 
 </details>
 ------
