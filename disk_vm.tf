@@ -73,6 +73,7 @@ resource "yandex_compute_instance" "storage" {
   network_interface {
     subnet_id          = yandex_vpc_subnet.develop.id
     security_group_ids = toset([yandex_vpc_security_group.example.id])
+    nat = true
   }
 
   dynamic "secondary_disk" {
