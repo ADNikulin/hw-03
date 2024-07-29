@@ -120,10 +120,11 @@
      ```
      Пример fqdn: ```web1.ru-central1.internal```(в случае указания имени ВМ); ```fhm8k1oojmm5lie8i22a.auto.internal```(в случае автоматической генерации имени ВМ зона изменяется). нужную вам переменную найдите в документации провайдера или terraform console.
   4. Выполните код. Приложите скриншот получившегося файла.
-     > ![image](https://github.com/user-attachments/assets/a85c66fb-0bb6-49fd-a075-5a7b9e1ab067)
-     > ![image](https://github.com/user-attachments/assets/29e26563-dc16-4d5d-98ed-37884af91328)
-     > ![image](https://github.com/user-attachments/assets/e7612cbf-5051-483a-838a-a711a9640bf9)
-     > ![image](https://github.com/user-attachments/assets/e703da0a-afbb-448c-a83a-191e7f5e0c81)
+     > ![image](https://github.com/user-attachments/assets/a85c66fb-0bb6-49fd-a075-5a7b9e1ab067)\
+     > ![image](https://github.com/user-attachments/assets/29e26563-dc16-4d5d-98ed-37884af91328)\
+     > ![image](https://github.com/user-attachments/assets/e7612cbf-5051-483a-838a-a711a9640bf9)\
+     > ![image](https://github.com/user-attachments/assets/e703da0a-afbb-448c-a83a-191e7f5e0c81)\
+     > всё находится в ветке terraform-03
   
   Для общего зачёта создайте в вашем GitHub-репозитории новую ветку terraform-03. Закоммитьте в эту ветку свой финальный код проекта, пришлите ссылку на коммит.   
   **Удалите все созданные ресурсы**.
@@ -161,7 +162,7 @@
      Приложите скриншот вывода команды ```terrafrom output```.
 
      > ![image](https://github.com/user-attachments/assets/d8d03dc7-a2d2-4837-9840-1ce55bf923e8)
-     
+     > всё находится в ветке terraform-03
   
 </details>
 ------
@@ -176,8 +177,11 @@
   
   Для проверки работы уберите у ВМ внешние адреса(nat=false). Этот вариант используется при работе через bastion-сервер.
   Для зачёта предоставьте код вместе с основной частью задания.
-  
-</details>
+
+  > Результат выполнения \
+  > ![image](https://github.com/user-attachments/assets/500ae844-8529-4cd5-88c9-4ca9676607a1) \
+  > В кратце скатал все файлы, подправил `ansible.tf`
+  > всё находится в ветке terraform-03-</details>
 
 ### Правила приёма работы
 
@@ -227,4 +231,9 @@
     ]
   }
   ```
+
+  > ![image](https://github.com/user-attachments/assets/732fbf6d-4b69-46da-ac42-b9a18e3967af)
+  > `merge(local.taks7, {"subnet_ids": [for e, i in local.taks7.subnet_ids : i if e != 3]}, {"subnet_zones": [for e, i in local.taks7.subnet_zones : i if e != 3]})` \
+  > Самое быстрое что пришло на ум
+
 </details>
