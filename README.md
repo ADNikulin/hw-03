@@ -159,6 +159,9 @@
      ]
      ```
      Приложите скриншот вывода команды ```terrafrom output```.
+
+     > ![image](https://github.com/user-attachments/assets/d8d03dc7-a2d2-4837-9840-1ce55bf923e8)
+     
   
 </details>
 ------
