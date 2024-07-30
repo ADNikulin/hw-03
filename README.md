@@ -124,7 +124,8 @@
      > ![image](https://github.com/user-attachments/assets/29e26563-dc16-4d5d-98ed-37884af91328)\
      > ![image](https://github.com/user-attachments/assets/e7612cbf-5051-483a-838a-a711a9640bf9)\
      > ![image](https://github.com/user-attachments/assets/e703da0a-afbb-448c-a83a-191e7f5e0c81)\
-     > всё находится в ветке terraform-03
+     > всё находится в master ветке и ветке [terraform-03](https://github.com/ADNikulin/hw-03/tree/terraform-03)
+
   
   Для общего зачёта создайте в вашем GitHub-репозитории новую ветку terraform-03. Закоммитьте в эту ветку свой финальный код проекта, пришлите ссылку на коммит.   
   **Удалите все созданные ресурсы**.
@@ -162,7 +163,7 @@
      Приложите скриншот вывода команды ```terrafrom output```.
 
      > ![image](https://github.com/user-attachments/assets/d8d03dc7-a2d2-4837-9840-1ce55bf923e8)
-     > всё находится в ветке terraform-03
+     > всё находится в master ветке и ветке [terraform-03](https://github.com/ADNikulin/hw-03/tree/terraform-03)
   
 </details>
 ------
@@ -181,7 +182,8 @@
   > Результат выполнения \
   > ![image](https://github.com/user-attachments/assets/500ae844-8529-4cd5-88c9-4ca9676607a1) \
   > В кратце скатал все файлы, подправил `ansible.tf`
-  > всё находится в ветке terraform-03-</details>
+  > всё находится в ветке всё находится в ветке [terraform-03](https://github.com/ADNikulin/hw-03/tree/terraform-03-6)
+</details>
 
 ### Правила приёма работы
 
