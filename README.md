@@ -232,8 +232,8 @@
   }
   ```
 
-  > ![image](https://github.com/user-attachments/assets/732fbf6d-4b69-46da-ac42-b9a18e3967af)
-  > `merge(local.taks7, {"subnet_ids": [for e, i in local.taks7.subnet_ids : i if e != 3]}, {"subnet_zones": [for e, i in local.taks7.subnet_zones : i if e != 3]})` \
+  > ![image](https://github.com/user-attachments/assets/70dc8440-9f13-4b85-86c6-8355882887b9) \
+  > `merge(local.taks7, {"subnet_ids": [for e, i in local.taks7.subnet_ids : i if e != 2]}, {"subnet_zones": [for e, i in local.taks7.subnet_zones : i if e != 2]})` \
   > Самое быстрое что пришло на ум
 
 </details>
